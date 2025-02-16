@@ -10,15 +10,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('products')->group(function () {
-    Route::get('/', [ProductController::class, 'index']); // List all products
-    Route::post('/', [ProductController::class, 'store']); // Create a new product
-    Route::get('/{id}', [ProductController::class, 'show']); // Get a single product
-    Route::put('/{id}', [ProductController::class, 'update']); // Update a product
-    Route::delete('/{id}', [ProductController::class, 'destroy']); // Delete a product
+    Route::get('/', [ProductController::class, 'index']); 
+    Route::post('/', [ProductController::class, 'store']); 
+    Route::get('/{id}', [ProductController::class, 'show']);
+    Route::put('/{id}', [ProductController::class, 'update']); 
+    Route::delete('/{id}', [ProductController::class, 'destroy']); 
 });
 
 
 Route::prefix('locations')->group(function () {
-    Route::get('/', [LocationController::class, 'index']); // List all products
-    Route::post('/', [LocationController::class, 'store']); // Create a new product
+    Route::get('/', [LocationController::class, 'index']); 
+    Route::post('/', [LocationController::class, 'store']); 
 });
