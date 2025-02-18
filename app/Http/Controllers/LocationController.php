@@ -29,7 +29,7 @@ class LocationController extends Controller{
         $validator = Validator::make($request->all(), [
             'country' => 'required|string|max:255',
             'district' => 'nullable|string',
-            'village' => 'required|string|max:255', // Fixed: Changed `decimal` to `string`
+            'village' => 'required|string|max:255',
             'image_url' => 'nullable|url',
         ]);
 
@@ -40,10 +40,8 @@ class LocationController extends Controller{
             ], 422);
         }
 
-        // Create the location
         $location = Location::create($validator->validated());
 
-        // Return a JSON response
         return response()->json([
             'success' => true,
             'message' => 'Location created successfully.',

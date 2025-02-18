@@ -9,7 +9,7 @@ class Location extends Model
 {
     use HasFactory;
 
-    protected $table = 'location'; // Fixed: Table name should be plural (`locations`)
+    protected $table = 'location';
     protected $fillable = [
         'country',
         'district',
@@ -17,9 +17,7 @@ class Location extends Model
         'image_url',
     ];
 
-    /**
-     * Scope to filter locations by country.
-     */
+
     public function scopeFilter($query, array $filters)
     {
         if (isset($filters['country'])) {

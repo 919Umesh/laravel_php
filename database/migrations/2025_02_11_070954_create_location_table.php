@@ -6,17 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
-        Schema::create('location', function (Blueprint $table) { // Fixed: Table name should be plural (`locations`)
+        Schema::create('location', function (Blueprint $table) { 
             $table->id();
-            $table->string('country'); // Country field
-            $table->text('district')->nullable(); // District field
-            $table->string('village'); // Fixed: Changed `decimal` to `string` for village
-            $table->string('image_url')->nullable(); // Image URL field
+            $table->string('country'); 
+            $table->text('district')->nullable(); 
+            $table->string('village'); 
+            $table->string('image_url')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('location'); // Fixed: Table name should be plural (`locations`)
+        Schema::dropIfExists('location'); 
     }
 };
