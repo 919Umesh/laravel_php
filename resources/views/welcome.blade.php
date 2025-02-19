@@ -17,7 +17,6 @@
         </div>
     @endif
 
-    <!-- Product Form -->
     <form action="{{ url('/store-product') }}" method="POST">
         @csrf
         <div class="mb-3">
@@ -35,14 +34,14 @@
             <textarea name="description" class="form-control"></textarea>
         </div>
         <div class="mb-3">
-            <label for="image_url" class="form-label">Description</label>
+            <label for="image_url" class="form-label">Image URL</label>
             <textarea name="image_url" class="form-control"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Add Product</button>
     </form>
 
-    <!-- Product List -->
+  
     <table class="table table-bordered mt-4">
         <thead>
             <tr>

@@ -13,8 +13,7 @@ class ProdudctFrontController extends Controller
            return view('welcome', compact('product'));
        }
 
-       public function store_product(Request $request)
-    {
+       public function store_product(Request $request) {
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
